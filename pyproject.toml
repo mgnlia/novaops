@@ -1,0 +1,29 @@
+[project]
+name = "novaops"
+version = "0.1.0"
+description = "NovaOps — AI-powered DevOps command center using multi-agent orchestration"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "strands-agents>=0.1.0",
+    "strands-agents-tools>=0.1.0",
+    "boto3>=1.35.0",
+]
+
+[project.scripts]
+novaops = "novaops.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.backends"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/novaops"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+]
