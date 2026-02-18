@@ -64,4 +64,4 @@ class TestVersion:
 
     def test_version_exists(self):
         from novaops import __version__
-        assert __version__ == "0.1.0"
+        assert __version__ == "0.2.0"
