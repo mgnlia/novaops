@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NovaOps — AI-Powered DevOps Command Center",
   description:
-    "Multi-agent DevOps command center powered by Amazon Nova and Strands Agents SDK",
+    "Intelligent multi-agent DevOps orchestration powered by Amazon Nova. Monitor services, manage incidents, and command your infrastructure with AI agents.",
+  keywords: ["DevOps", "AI", "Amazon Nova", "monitoring", "incident management"],
 };
 
 export default function RootLayout({
@@ -17,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
         {children}
       </body>
     </html>
