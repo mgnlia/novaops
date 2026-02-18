@@ -1,78 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #00d4ff;
+  --accent-green: #00ff88;
+  --accent-red: #ff4444;
+  --accent-yellow: #ffaa00;
+  --card-bg: #111111;
+  --card-border: #222222;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* Subtle grid background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      rgba(6, 182, 212, 0.08),
-      transparent
-    ),
-    linear-gradient(
-      rgba(148, 163, 184, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.03) 1px,
-      transparent 1px
-    );
-  background-size: 100% 100%, 40px 40px, 40px 40px;
-  pointer-events: none;
-  z-index: -1;
-}
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
 
-/* Custom scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgb(51 65 85);
-  border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgb(71 85 105);
-}
-
-/* Selection color */
-::selection {
-  background: rgba(6, 182, 212, 0.3);
-  color: white;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Animation for glow effects */
+/* Pulse animation for live indicators */
 @keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 5px rgba(6, 182, 212, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
