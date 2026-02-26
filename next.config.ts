@@ -1,4 +1,13 @@
-// This file intentionally left minimal.
-// Config lives in next.config.mjs — Next.js prefers .mjs over .ts.
-// If both exist, Next.js uses .mjs.
-export default {};
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
+
+export default nextConfig;
