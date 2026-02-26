@@ -1,9 +1,3 @@
-import { getDefaultConfig } from '@rainbow-me/rainbowkit'
-import { sepolia, mainnet } from 'wagmi/chains'
-
-export const config = getDefaultConfig({
-  appName: 'AI Liquidation Prevention Agent',
-  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'YOUR_PROJECT_ID',
-  chains: [sepolia, mainnet],
-  ssr: true,
-})
+// This file is no longer used. NovaOps is a DevOps dashboard, not a Web3 app.
+// Kept as empty placeholder to avoid import errors during cleanup.
+export const config = {}
