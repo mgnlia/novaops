@@ -99,7 +99,7 @@ export default function Home() {
           <span className="text-[#00ff88]">Strands Agents SDK</span>
         </p>
         <p className="mt-1 text-gray-600">
-          Built for the Amazon Nova AI Challenge 2025
+          Built for the Amazon Nova AI Hackathon 2026
         </p>
       </footer>
     </main>
